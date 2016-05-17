@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void		ft_epur(t_list *stc, char toerase)
+void		ft_epur(t_lpr *stc, char toerase)
 {
 	int		i;
 	int		a;

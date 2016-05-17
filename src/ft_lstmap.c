@@ -5,9 +5,9 @@
 ** the 'f' function
 */
 
-t_list_1	*ft_lstmap(t_list_1 *lst, t_list_1 *(*f)(t_list_1 *elem))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list_1	*newlst;
+	t_list	*newlst;
 
 	newlst = NULL;
 	if (lst && f)

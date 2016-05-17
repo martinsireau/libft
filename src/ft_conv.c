@@ -1,24 +1,24 @@
 #include "libft.h"
 
-static void		conv_digit_castinit(char *ptr, t_list *stc, va_list ap)
+static void		conv_digit_castinit(char *ptr, t_lpr *stc, va_list ap)
 {
 	if (!stc->lmod && ptr[0] > 'a' && ptr[0] != 'u')
 		stc->of_int = va_arg(ap, int);
 	else if (ptr[0] == 'u' && !stc->lmod)
 		stc->of_int = va_arg(ap, unsigned int);
 	else if (ptr[0] == 'u' && stc->lmod)
-		stc->of_int = va_arg(ap, uintmax_t);
+		stc->of_int = va_arg(ap, size_t);
 	else if (ft_needle(ptr[0], "oOxX") && stc->lmod)
-		stc->of_int = va_arg(ap, uintmax_t);
+		stc->of_int = va_arg(ap, size_t);
 	else if (ptr[0] <= 'X')
 		stc->of_int = va_arg(ap, long);
 	else
 		stc->of_int = va_arg(ap, long long);
 }
 
-void			ft_conv_digit(char *ptr, t_list *stc, va_list ap)
+void			ft_conv_digit(char *ptr, t_lpr *stc, va_list ap)
 {
-	void		(*ft_dioux[5])(t_list*, char*);
+	void		(*ft_dioux[5])(t_lpr*, char*);
 	const char	conv[5] = "douxi";
 	char		p;
 	int			i;
@@ -42,9 +42,9 @@ void			ft_conv_digit(char *ptr, t_list *stc, va_list ap)
 	}
 }
 
-void			ft_conv_alpha(char *ptr, t_list *stc, va_list ap)
+void			ft_conv_alpha(char *ptr, t_lpr *stc, va_list ap)
 {
-	void		(*ft_alpha[5])(t_list*);
+	void		(*ft_alpha[5])(t_lpr*);
 	const char	conv[2] = "sS";
 	int			i;
 
@@ -67,9 +67,9 @@ void			ft_conv_alpha(char *ptr, t_list *stc, va_list ap)
 	ft_alpha[i](stc);
 }
 
-void			ft_conv_alpha_pcc(char *ptr, t_list *stc, va_list ap)
+void			ft_conv_alpha_pcc(char *ptr, t_lpr *stc, va_list ap)
 {
-	void		(*ft_alpha[5])(t_list*);
+	void		(*ft_alpha[5])(t_lpr*);
 	const char	conv[3] = "pcC";
 	int			i;
 
@@ -89,9 +89,9 @@ void			ft_conv_alpha_pcc(char *ptr, t_list *stc, va_list ap)
 		ft_alpha[i](stc);
 }
 
-void			ft_no_conv(char *ptr, t_list *stc)
+void			ft_no_conv(char *ptr, t_lpr *stc)
 {
-	void	(*ft_flags[5])(t_list*);
+	void	(*ft_flags[5])(t_lpr*);
 
 	(ft_flags)[0] = &hash;
 	(ft_flags)[1] = &plus;

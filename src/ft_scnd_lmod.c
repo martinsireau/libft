@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void				ft_l(t_list *stc)
+void				ft_l(t_lpr *stc)
 {
 	if (stc->conv != 'p')
 	{
@@ -11,24 +11,24 @@ void				ft_l(t_list *stc)
 	}
 }
 
-void				ft_ll(t_list *stc)
+void				ft_ll(t_lpr *stc)
 {
 	if (ft_needle(stc->conv, "uU"))
 		stc->of_int = (unsigned long long)stc->of_int;
 }
 
-void				ft_j(t_list *stc)
+void				ft_j(t_lpr *stc)
 {
 	if (stc->conv != 'p')
 	{
 		if (ft_needle(stc->conv, "oOuUxX"))
-			stc->of_int = (uintmax_t)stc->of_int;
+			stc->of_int = (size_t)stc->of_int;
 		else
-			stc->of_int = (intmax_t)stc->of_int;
+			stc->of_int = (size_t)stc->of_int;
 	}
 }
 
-void				ft_z(t_list *stc)
+void				ft_z(t_lpr *stc)
 {
 	if (stc->conv != 'p')
 	{

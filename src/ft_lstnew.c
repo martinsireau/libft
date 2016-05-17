@@ -5,11 +5,11 @@
 ** parameter, and set his next parameter to NULL
 */
 
-t_list_1	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list_1	*newlst;
+	t_list	*newlst;
 
-	newlst = malloc(sizeof(t_list_1));
+	newlst = malloc(sizeof(t_list));
 	if (newlst == NULL)
 		return (NULL);
 	if (!content)

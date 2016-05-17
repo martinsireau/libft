@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int				ft_find_lengthmod(t_list *stc, char *ptr, int p)
+int				ft_find_lengthmod(t_lpr *stc, char *ptr, int p)
 {
 	int				i;
 	int				a;
@@ -55,7 +55,7 @@ static int		ft_fp2(int i, int a, char *ptr)
 	return (a);
 }
 
-int				ft_find_precision(t_list *stc, char *ptr, int p)
+int				ft_find_precision(t_lpr *stc, char *ptr, int p)
 {
 	int		a;
 	int		b;
@@ -81,7 +81,7 @@ int				ft_find_precision(t_list *stc, char *ptr, int p)
 	return (b);
 }
 
-int				ft_find_field(t_list *stc, char *ptr, int p)
+int				ft_find_field(t_lpr *stc, char *ptr, int p)
 {
 	int		i;
 	int		a;

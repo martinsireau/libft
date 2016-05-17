@@ -1,10 +1,10 @@
 #include "libft.h"
 
-t_list		*ft_reset_list(t_list *stc)
+t_lpr		*ft_reset_lpr(t_lpr *stc)
 {
 	if (stc)
 		free(stc);
-	stc = ft_memalloc(sizeof(t_list*));
+	stc = ft_memalloc(sizeof(t_lpr*));
 	stc->min = 0;
 	stc->plus = 0;
 	stc->space = 0;

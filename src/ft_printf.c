@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static char		*special_case(t_list *stc, char *ptr)
+static char		*special_case(t_lpr *stc, char *ptr)
 {
 	if (stc->field > 0 && !ft_needle('-', stc->flag))
 	{
@@ -20,7 +20,7 @@ static char		*special_case(t_list *stc, char *ptr)
 	return (ptr);
 }
 
-static char		*ft_find_form(const char *format, va_list ap, t_list *stc)
+static char		*ft_find_form(const char *format, va_list ap, t_lpr *stc)
 {
 	char		*ptr;
 	int			ret;
@@ -55,7 +55,7 @@ static int		ft_after(const char *format, int printed)
 static int		print(const char *format, va_list ap)
 {
 	int			printed;
-	t_list		*stc;
+	t_lpr		*stc;
 
 	printed = 0;
 	while (format[0])
@@ -66,8 +66,8 @@ static int		print(const char *format, va_list ap)
 			if (format[0] == '\0')
 				return (printed);
 			stc = NULL;
-			stc = ft_memalloc(sizeof(t_list));
-			ft_bzero(stc, sizeof(t_list*));
+			stc = ft_memalloc(sizeof(t_lpr));
+			ft_bzero(stc, sizeof(t_lpr*));
 			format = ft_find_form(format, ap, stc);
 			printed += stc->printed;
 			ft_free_list(stc);

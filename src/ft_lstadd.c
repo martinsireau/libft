@@ -5,7 +5,7 @@
 ** by 'alst'
 */
 
-void	ft_lstadd(t_list_1 **alst, t_list_1 *ls_new)
+void	ft_lstadd(t_list **alst, t_list *ls_new)
 {
 	ls_new->next = *alst;
 	*alst = ls_new;

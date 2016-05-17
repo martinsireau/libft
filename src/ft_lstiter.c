@@ -4,7 +4,7 @@
 ** apply the 'f' function to each node of the linked list
 */
 
-void	ft_lstiter(t_list_1 *lst, void (*f)(t_list_1 *elem))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	while (lst)
 	{

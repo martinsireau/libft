@@ -2,8 +2,8 @@
 
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <stdarg.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 # define NORMAL "\e[0m"
 # define RED "\e[0;31m"
@@ -22,14 +22,14 @@
 # define LIGHT_PURPLE "\e[1;35m"
 # define LIGHT_RED "\e[1;31m"
 
-typedef struct			s_list_1
+typedef struct			s_list
 {
 	void				*content;
 	size_t				content_size;
-	struct s_list_1		*next;
-}						t_list_1;
+	struct s_list		*next;
+}						t_list;
 
-typedef struct			s_list
+typedef struct			s_lpr
 {
 	char				*flag;
 	char				*lmod;
@@ -47,7 +47,7 @@ typedef struct			s_list
 	int					plus;
 	int					hash;
 	int					printed;
-}						t_list;
+}						t_lpr;
 
 /*
 ** Conversion
@@ -131,13 +131,13 @@ int						ft_toupper(int c);
 /*
 ** list management
 */
-void					ft_lstdel(t_list_1 **alst, void (*del)(void*, size_t));
-void					ft_lstadd(t_list_1 **alst, t_list_1 *ls_new);
-t_list_1				*ft_lstnew(void const *content, size_t content_size);
-void					ft_lstiter(t_list_1 *lst, void (*f)(t_list_1 *elem));
-t_list_1				*ft_lstmap(t_list_1 *lst,
-						t_list_1 *(*f)(t_list_1 *elem));
-void					ft_lstdelone(t_list_1 **alst,
+void					ft_lstdel(t_list **alst, void (*del)(void*, size_t));
+void					ft_lstadd(t_list **alst, t_list *ls_new);
+t_list				*ft_lstnew(void const *content, size_t content_size);
+void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst,
+						t_list *(*f)(t_list *elem));
+void					ft_lstdelone(t_list **alst,
 						void (*del)(void*, size_t));
 
 /*
@@ -153,55 +153,55 @@ void					sort_in_tab(int *tab, unsigned int size);
 */
 
 char					*ft_itoa_base(long long value, int base);
-char					*ft_itoa_base_ulongmax(uintmax_t value, int base);
-t_list					*ft_reset_list(t_list *stc);
-void					ft_widechar(t_list *stc, char *mask,
+char					*ft_itoa_base_ulongmax(size_t value, int base);
+t_lpr					*ft_reset_lpr(t_lpr *stc);
+void					ft_widechar(t_lpr *stc, char *mask,
 						char *widechar, int len);
 int						ft_needle(char c, char *str);
 int						ft_figure(int number);
 void					ft_putichar(int i, char c);
 int						ft_to_stdout(char *ptr, char *to_stdout);
-int						ft_check_of(t_list *stc);
-void					ft_epur(t_list *stc, char toerase);
-void					ft_free_list(t_list *stc);
-void					ft_init_struct(t_list *stc);
-void					ft_print_base(t_list *stc, int base);
-void					ft_print_base_max(t_list *stc, int base);
+int						ft_check_of(t_lpr *stc);
+void					ft_epur(t_lpr *stc, char toerase);
+void					ft_free_list(t_lpr *stc);
+void					ft_init_struct(t_lpr *stc);
+void					ft_print_base(t_lpr *stc, int base);
+void					ft_print_base_max(t_lpr *stc, int base);
 int						ft_printf(const char *format, ...);
-int						ft_find_flag(t_list *stc, char *ptr);
-int						ft_find_field(t_list *stc, char *ptr, int p);
-int						ft_find_precision(t_list *stc, char *ptr, int p);
-int						ft_find_lengthmod(t_list *stc, char *ptr, int p);
-void					ft_conv_digit(char *ptr, t_list *stc, va_list ap);
-void					ft_conv_alpha(char *ptr, t_list *stc, va_list ap);
-void					ft_conv_alpha_pcc(char *ptr, t_list *stc, va_list ap);
-void					ft_no_conv(char *ptr, t_list *stc);
+int						ft_find_flag(t_lpr *stc, char *ptr);
+int						ft_find_field(t_lpr *stc, char *ptr, int p);
+int						ft_find_precision(t_lpr *stc, char *ptr, int p);
+int						ft_find_lengthmod(t_lpr *stc, char *ptr, int p);
+void					ft_conv_digit(char *ptr, t_lpr *stc, va_list ap);
+void					ft_conv_alpha(char *ptr, t_lpr *stc, va_list ap);
+void					ft_conv_alpha_pcc(char *ptr, t_lpr *stc, va_list ap);
+void					ft_no_conv(char *ptr, t_lpr *stc);
 void					ft_split_size(char *ret, int time);
-void					ft_d(t_list *stc, char *ptr);
-void					ft_i(t_list *stc, char *ptr);
-void					ft_o(t_list *stc, char *ptr);
-void					ft_u(t_list *stc, char *ptr);
-void					ft_x(t_list *stc, char *ptr);
-void					ft_hh(t_list *stc);
-void					ft_h(t_list *stc);
-void					ft_l(t_list *stc);
-void					ft_ll(t_list *stc);
-void					ft_j(t_list *stc);
-void					ft_z(t_list *stc);
-void					ft_lmod_ptr(t_list *stc);
+void					ft_d(t_lpr *stc, char *ptr);
+void					ft_i(t_lpr *stc, char *ptr);
+void					ft_o(t_lpr *stc, char *ptr);
+void					ft_u(t_lpr *stc, char *ptr);
+void					ft_x(t_lpr *stc, char *ptr);
+void					ft_hh(t_lpr *stc);
+void					ft_h(t_lpr *stc);
+void					ft_l(t_lpr *stc);
+void					ft_ll(t_lpr *stc);
+void					ft_j(t_lpr *stc);
+void					ft_z(t_lpr *stc);
+void					ft_lmod_ptr(t_lpr *stc);
 int						ft_atoi_btod(char *str, int nb, int i, int result);
 int						ft_wstrlen(wchar_t *wstr);
 int						ft_wchar_len(wchar_t wchar);
-void					ft_wich_flags(t_list *stc);
-void					ft_util_dioux(t_list *stc, int base);
-void					ft_util_sspcc(t_list *stc);
-void					hash(t_list *stc);
-void					zero(t_list *stc);
-void					minus(t_list *stc);
-void					plus(t_list *stc);
-void					space(t_list *stc);
-void					ft_s(t_list *stc);
-void					ft_bs(t_list *stc);
-void					ft_p(t_list *stc);
-void					ft_c(t_list *stc);
+void					ft_wich_flags(t_lpr *stc);
+void					ft_util_dioux(t_lpr *stc, int base);
+void					ft_util_sspcc(t_lpr *stc);
+void					hash(t_lpr *stc);
+void					zero(t_lpr *stc);
+void					minus(t_lpr *stc);
+void					plus(t_lpr *stc);
+void					space(t_lpr *stc);
+void					ft_s(t_lpr *stc);
+void					ft_bs(t_lpr *stc);
+void					ft_p(t_lpr *stc);
+void					ft_c(t_lpr *stc);
 #endif

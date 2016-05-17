@@ -5,7 +5,7 @@ static int		ft_is_flag(char c)
 	return (c == '#' || c == '0' || c == '-' || c == '+' || c == ' ');
 }
 
-int				ft_find_flag(t_list *stc, char *ptr)
+int				ft_find_flag(t_lpr *stc, char *ptr)
 {
 	int		i;
 

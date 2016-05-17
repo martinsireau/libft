@@ -5,9 +5,9 @@
 
 #include "libft.h"
 
-void	ft_lstdel(t_list_1 **alst, void (*del)(void*, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	t_list_1	*tmp_lst;
+	t_list	*tmp_lst;
 
 	while (*alst)
 	{

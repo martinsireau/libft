@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void		ft_wich_flags(t_list *stc)
+void		ft_wich_flags(t_lpr *stc)
 {
 	int		a;
 

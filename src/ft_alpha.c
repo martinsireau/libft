@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void			ft_s(t_list *stc)
+void			ft_s(t_lpr *stc)
 {
 	int		i;
 
@@ -23,7 +23,7 @@ void			ft_s(t_list *stc)
 		minus(stc);
 }
 
-static void		ft_bs_call_c(t_list *stc, int len_out, int go)
+static void		ft_bs_call_c(t_lpr *stc, int len_out, int go)
 {
 	int		i;
 
@@ -48,7 +48,7 @@ static void		ft_bs_call_c(t_list *stc, int len_out, int go)
 		ft_util_sspcc(stc);
 }
 
-void			ft_bs(t_list *stc)
+void			ft_bs(t_lpr *stc)
 {
 	int		i;
 	int		go;
@@ -75,7 +75,7 @@ void			ft_bs(t_list *stc)
 		minus(stc);
 }
 
-static void		ft_c_mask(t_list *stc)
+static void		ft_c_mask(t_lpr *stc)
 {
 	int		len;
 	char	*tmp;
@@ -93,7 +93,7 @@ static void		ft_c_mask(t_list *stc)
 	free(tmp);
 }
 
-void			ft_c(t_list *stc)
+void			ft_c(t_lpr *stc)
 {
 	int		llmod;
 

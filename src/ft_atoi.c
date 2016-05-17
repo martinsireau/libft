@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 /*
 ** return the conversion from a number of type char to a number of type int

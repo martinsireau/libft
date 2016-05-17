@@ -1,9 +1,9 @@
 #include "libft.h"
 
-static void		ft_util_dioux_flag(t_list *stc)
+static void		ft_util_dioux_flag(t_lpr *stc)
 {
 	const char		flag_tab[4] = "#+ 0";
-	void			(*ft_flags[5])(t_list*);
+	void			(*ft_flags[5])(t_lpr*);
 	int				i;
 	int				a;
 
@@ -24,7 +24,7 @@ static void		ft_util_dioux_flag(t_list *stc)
 	}
 }
 
-static void		ft_util_dioux_scnd(t_list *stc, int base)
+static void		ft_util_dioux_scnd(t_lpr *stc, int base)
 {
 	int		len_out;
 	char	*tmp;
@@ -48,7 +48,7 @@ static void		ft_util_dioux_scnd(t_list *stc, int base)
 	stc->precision -= len_out;
 }
 
-void			ft_util_dioux(t_list *stc, int base)
+void			ft_util_dioux(t_lpr *stc, int base)
 {
 	ft_util_dioux_scnd(stc, base);
 	ft_util_dioux_flag(stc);

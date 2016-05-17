@@ -22,7 +22,7 @@ void		ft_split_size(char *ret, int time)
 	free(str);
 }
 
-void		ft_widechar(t_list *stc, char *mask, char *widechar, int len_mask)
+void		ft_widechar(t_lpr *stc, char *mask, char *widechar, int len_mask)
 {
 	char	*change;
 	int		i;

@@ -6,7 +6,7 @@ static int		ft_isnumber(char c)
 			|| c == '0' || c == 'x');
 }
 
-int				ft_check_of(t_list *stc)
+int				ft_check_of(t_lpr *stc)
 {
 	const char		*nb;
 	int				i;

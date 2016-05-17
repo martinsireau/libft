@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void	ft_print_base(t_list *stc, int base)
+void	ft_print_base(t_lpr *stc, int base)
 {
 	char		*tmp;
 
@@ -10,7 +10,7 @@ void	ft_print_base(t_list *stc, int base)
 	free(tmp);
 }
 
-void	ft_print_base_max(t_list *stc, int base)
+void	ft_print_base_max(t_lpr *stc, int base)
 {
 	char		*tmp;
 

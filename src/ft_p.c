@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static void		ft_p_of_int_null(t_list *stc)
+static void		ft_p_of_int_null(t_lpr *stc)
 {
 	stc->printed += 2;
 	stc->field -= 2;
@@ -27,7 +27,7 @@ static void		ft_p_of_int_null(t_list *stc)
 		minus(stc);
 }
 
-static void		ft_p_precision(t_list *stc, char *tmp)
+static void		ft_p_precision(t_lpr *stc, char *tmp)
 {
 	if (stc->precision > 0)
 	{
@@ -42,7 +42,7 @@ static void		ft_p_precision(t_list *stc, char *tmp)
 	}
 }
 
-void			ft_p(t_list *stc)
+void			ft_p(t_lpr *stc)
 {
 	char	*tmp;
 

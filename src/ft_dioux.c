@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void				ft_d(t_list *stc, char *ptr)
+void				ft_d(t_lpr *stc, char *ptr)
 {
 	stc->conv = ptr[0];
 	ft_util_dioux(stc, 10);
@@ -14,7 +14,7 @@ void				ft_d(t_list *stc, char *ptr)
 		minus(stc);
 }
 
-void				ft_o(t_list *stc, char *ptr)
+void				ft_o(t_lpr *stc, char *ptr)
 {
 	stc->conv = ptr[0];
 	ft_util_dioux(stc, 8);
@@ -30,7 +30,7 @@ void				ft_o(t_list *stc, char *ptr)
 		minus(stc);
 }
 
-void				ft_u(t_list *stc, char *ptr)
+void				ft_u(t_lpr *stc, char *ptr)
 {
 	stc->conv = ptr[0];
 	ft_util_dioux(stc, 10);
@@ -44,7 +44,7 @@ void				ft_u(t_list *stc, char *ptr)
 		minus(stc);
 }
 
-void				ft_x(t_list *stc, char *ptr)
+void				ft_x(t_lpr *stc, char *ptr)
 {
 	int		base;
 	char	*tmp;

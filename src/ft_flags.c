@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void			minus(t_list *stc)
+void			minus(t_lpr *stc)
 {
 	if (stc->field > 0)
 	{
@@ -9,7 +9,7 @@ void			minus(t_list *stc)
 	}
 }
 
-void			plus(t_list *stc)
+void			plus(t_lpr *stc)
 {
 	if (ft_needle(stc->conv, "di"))
 	{
@@ -37,7 +37,7 @@ void			plus(t_list *stc)
 	}
 }
 
-void			space(t_list *stc)
+void			space(t_lpr *stc)
 {
 	if (!stc->plus && !stc->min && !ft_needle(stc->conv, "oOuxXcCsSp"))
 	{

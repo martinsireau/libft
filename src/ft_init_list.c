@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void		ft_init_struct(t_list *stc)
+void		ft_init_struct(t_lpr *stc)
 {
 	stc->flag = NULL;
 	stc->lmod = NULL;
@@ -9,7 +9,7 @@ void		ft_init_struct(t_list *stc)
 	stc->of_wstr = NULL;
 }
 
-void		ft_free_list(t_list *stc)
+void		ft_free_list(t_lpr *stc)
 {
 	if (stc->flag)
 		free(stc->flag);

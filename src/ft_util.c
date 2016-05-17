@@ -1,11 +1,11 @@
 #include "libft.h"
 
-static void		ft_util_sspcc_scnd(t_list *stc)
+static void		ft_util_sspcc_scnd(t_lpr *stc)
 {
 	int			a;
 	int			i;
 	const char	flag_tab[4] = "#+ 0";
-	void		(*ft_flags[5])(t_list*);
+	void		(*ft_flags[5])(t_lpr*);
 
 	(ft_flags)[0] = &hash;
 	(ft_flags)[1] = &plus;
@@ -28,7 +28,7 @@ static void		ft_util_sspcc_scnd(t_list *stc)
 	}
 }
 
-void			ft_util_sspcc(t_list *stc)
+void			ft_util_sspcc(t_lpr *stc)
 {
 	if (stc->of_int == -1 && !stc->precision && !stc->precision_sign)
 		stc->field -= ft_strlen(stc->of_str);

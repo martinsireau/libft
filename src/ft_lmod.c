@@ -1,8 +1,8 @@
 #include "libft.h"
 
-void		ft_lmod_ptr(t_list *stc)
+void		ft_lmod_ptr(t_lpr *stc)
 {
-	void		(*ft_lmod[6])(t_list*);
+	void		(*ft_lmod[6])(t_lpr*);
 	const char	*lmod_tab[6] = {"hh", "h", "l", "ll", "j", "z"};
 	int			i;
 
@@ -19,7 +19,7 @@ void		ft_lmod_ptr(t_list *stc)
 		ft_lmod[i](stc);
 }
 
-void		ft_hh(t_list *stc)
+void		ft_hh(t_lpr *stc)
 {
 	if (stc->conv != 'p')
 	{
@@ -35,7 +35,7 @@ void		ft_hh(t_list *stc)
 	}
 }
 
-void		ft_h(t_list *stc)
+void		ft_h(t_lpr *stc)
 {
 	if (stc->conv != 'p')
 	{

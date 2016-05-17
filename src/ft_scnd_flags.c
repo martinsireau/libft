@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static void		hash_xxp(t_list *stc)
+static void		hash_xxp(t_lpr *stc)
 {
 	if (ft_needle(stc->conv, "xp"))
 	{
@@ -16,7 +16,7 @@ static void		hash_xxp(t_list *stc)
 	}
 }
 
-void			hash(t_list *stc)
+void			hash(t_lpr *stc)
 {
 	if ((ft_needle(stc->conv, "oOxXp")) && stc->of_int)
 	{
@@ -37,7 +37,7 @@ void			hash(t_list *stc)
 	}
 }
 
-void			zero(t_list *stc)
+void			zero(t_lpr *stc)
 {
 	if (!stc->min && stc->zero && stc->conv != 'p')
 	{
